@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forro Coffee – Specialty coffee on the +15, Calgary</title>
+<meta name="description" content="Forro Coffee, 2nd floor (+15 level), 520 5 Ave SW, Calgary. Specialty coffee, breakfast, lunch, teas and desserts. Monday to Friday, 7 am to 4 pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wall:#f1f0ec; --ink:#1c1b1a; --wood:#b88a5a; --wood-dark:#8d6540; --steel:#c8cbcf; --white:#fff;
+    --head:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+    --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+    --script:"Caveat","Brush Script MT",cursive;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--wall);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--wood);outline-offset:3px}
+  .wrap{max-width:64rem;margin:0 auto;padding:0 1.5rem}
+  h1,h2,h3{font-family:var(--head);text-transform:uppercase;letter-spacing:.03em;line-height:1;margin:0}
+
+  /* Navigation */
+  nav{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--white)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.8rem;padding-bottom:.8rem}
+  .logo{font-family:var(--script);font-size:1.9rem;text-decoration:none;line-height:1}
+  nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-family:var(--head);font-size:1.15rem;letter-spacing:.05em;text-transform:uppercase}
+  nav a{text-decoration:none}
+  nav a:hover{color:var(--wood)}
+
+  /* Hero */
+  .hero{padding:4.5rem 0 3.5rem}
+  .hero h1{font-size:clamp(4.5rem,20vw,11rem);font-weight:700;letter-spacing:.01em}
+  .hero .tag{font-family:var(--script);font-size:clamp(1.8rem,5vw,2.6rem);margin:.4rem 0 0;color:var(--wood-dark)}
+  .hero .rail{height:8px;background:var(--wood);margin:2rem 0 1.2rem;box-shadow:0 8px 0 -3px var(--wood-dark)}
+  .facts{display:flex;flex-wrap:wrap;gap:.6rem 2.5rem;margin:0;padding:0;list-style:none;font-weight:500}
+  .facts b{font-family:var(--head);font-size:1.2rem;letter-spacing:.04em;text-transform:uppercase;margin-right:.4rem}
+
+  /* Menu board */
+  .board{padding:3rem 0 4.5rem}
+  .board h2{font-size:clamp(2.4rem,7vw,3.6rem);margin-bottom:2rem}
+  .cols{display:grid;gap:2.5rem 3.5rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+  .col h3{font-size:1.9rem;padding-bottom:.4rem;border-bottom:8px solid var(--wood)}
+  .col ul{list-style:none;margin:0;padding:0}
+  .col li{padding:.65rem 0 .5rem;border-bottom:5px solid var(--wood);font-family:var(--head);font-size:1.35rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  .col li small{display:block;font-family:var(--body);font-size:.85rem;font-weight:400;letter-spacing:0;text-transform:none;color:#5b5955;margin-top:.1rem}
+  .note{margin-top:2rem;color:#5b5955;font-size:.95rem}
+
+  /* Food panel (dark, like the screen menu) */
+  .food{background:var(--ink);color:var(--white);padding:4rem 0 4.5rem}
+  .food h2{font-size:clamp(2.4rem,7vw,3.6rem);margin-bottom:.6rem}
+  .food .lead{max-width:34rem;color:#cfcdc8;margin:0 0 2.2rem}
+  .tiles{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr))}
+  .tile{background:#2a2928;border:1px solid #3a3937;border-radius:.4rem;padding:1.1rem 1rem 1.2rem;min-height:7rem;display:flex;flex-direction:column;justify-content:flex-end}
+  .tile h3{font-size:1.35rem;letter-spacing:.05em}
+  .tile p{margin:.3rem 0 0;font-size:.85rem;color:#b9b6b0}
+  .tile.accent{background:var(--wood);border-color:var(--wood);color:var(--ink)}
+  .tile.accent p{color:#2d2316}
+
+  /* Visit */
+  .visit{padding:4.5rem 0}
+  .visit h2{font-size:clamp(2.4rem,7vw,3.6rem);margin-bottom:2rem}
+  .visit-grid{display:grid;gap:2.5rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+  .visit h3{font-size:1.5rem;margin-bottom:.6rem;padding-bottom:.3rem;border-bottom:5px solid var(--wood);display:inline-block}
+  .visit p{margin:0 0 .6rem}
+  .hours{list-style:none;margin:0;padding:0}
+  .hours li{display:flex;justify-content:space-between;max-width:17rem}
+  .btn{display:inline-block;margin-top:.6rem;background:var(--ink);color:var(--white);font-family:var(--head);font-size:1.2rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:.65rem 1.3rem;border-radius:.2rem}
+  .btn:hover{background:var(--wood-dark)}
+
+  /* Rating */
+  .rating{background:var(--steel);padding:2.2rem 0}
+  .rating .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:baseline}
+  .rating strong{font-family:var(--head);font-size:3.4rem;line-height:1}
+  .rating span{max-width:36rem}
+
+  footer{background:var(--ink);color:#bdbab4;padding:1.6rem 0;font-size:.88rem}
+
+  @media (max-width:36rem){
+    nav ul{gap:.9rem;font-size:1rem}
+    .logo{font-size:1.6rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Forro</a>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#food">Food</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Forro<br>Coffee</h1>
+    <p class="tag">on the 2nd floor, +15 level</p>
+    <div class="rail" aria-hidden="true"></div>
+    <ul class="facts">
+      <li><b>Open</b>Monday–Friday, 7 am – 4 pm</li>
+      <li><b>Find us</b>520 5 Ave SW, Calgary</li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="board" id="menu">
+    <div class="wrap">
+      <h2>Drinks</h2>
+      <div class="cols">
+        <div class="col">
+          <h3>Coffee</h3>
+          <ul>
+            <li>Espresso</li>
+            <li>Americano</li>
+            <li>Cappuccino</li>
+            <li>Latte</li>
+            <li>Cortado</li>
+            <li>Flat white</li>
+            <li>Mocha</li>
+            <li>Specialty coffee<small>Changes with the beans in rotation</small></li>
+            <li>Alt milk<small>Available for any drink</small></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Not coffee</h3>
+          <ul>
+            <li>Chai latte</li>
+            <li>London fog</li>
+            <li>Hot chocolate</li>
+            <li>Matcha latte</li>
+            <li>Lemonades</li>
+            <li>Fuel shakes<small>Protein milkshakes</small></li>
+            <li>Ice drinks</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Tea</h3>
+          <ul>
+            <li>Ginger lemon</li>
+            <li>Rosehip mint</li>
+            <li>Fruit</li>
+            <li>Herbal</li>
+            <li>Black &amp; green</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Sizes and prices are shown on the menu board in the café.</p>
+    </div>
+  </section>
+
+  <section class="food" id="food">
+    <div class="wrap">
+      <h2>Food</h2>
+      <p class="lead">Breakfast and lunch are made fresh, with homemade desserts. Menu items rotate; the soup changes weekly.</p>
+      <div class="tiles">
+        <div class="tile accent"><h3>Soup of the week</h3><p>Changes weekly</p></div>
+        <div class="tile"><h3>Caesar</h3></div>
+        <div class="tile"><h3>Sandwiches</h3></div>
+        <div class="tile"><h3>Toasted sandwiches</h3></div>
+        <div class="tile"><h3>English muffin</h3></div>
+        <div class="tile"><h3>Avocado toast</h3></div>
+        <div class="tile"><h3>Waffles</h3></div>
+        <div class="tile"><h3>Pancakes</h3></div>
+        <div class="tile"><h3>Chia pudding</h3></div>
+        <div class="tile"><h3>Cinnamon rolls</h3></div>
+        <div class="tile"><h3>Profiteroles</h3></div>
+        <div class="tile"><h3>Muffins</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rating" aria-label="Rating">
+    <div class="wrap">
+      <strong>4.8</strong>
+      <span>Average rating from 36 Google reviews. Beans are also sold to take home.</span>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <h2>Visit</h2>
+      <div class="visit-grid">
+        <div>
+          <h3>Address</h3>
+          <p>2nd floor (+15 level)<br>520 5 Ave SW<br>Calgary, AB T2P 3R7</p>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Forro+Coffee+520+5+Ave+SW+Calgary">Get directions</a>
+        </div>
+        <div>
+          <h3>Hours</h3>
+          <ul class="hours">
+            <li><span>Monday – Friday</span><span>7 am – 4 pm</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p><a href="tel:+12042914515">(204) 291-4515</a></p>
+          <p>Dine in or take away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Unofficial website proposal prepared by Studio Creative. Not affiliated with Forro Coffee.
+  </div>
+</footer>
+
+</body>
+</html>
